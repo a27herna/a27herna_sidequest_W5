@@ -57,7 +57,7 @@ function draw() {
   let targetX = player.x - width / 2;
   let targetY = player.y - height / 2;
 
-  let camTargetting = false;
+  let camTargeting = false;
 
   for (p of level.pois) {
     if (p.d) {
@@ -70,7 +70,7 @@ function draw() {
 
         targetX -= width / 2;
         targetY -= height / 2;
-        camTargetting = true;
+        camTargeting = true;
       }
     }
     if (overlapAABB(player, p)) {
@@ -79,24 +79,12 @@ function draw() {
 
       targetX -= width / 2;
       targetY -= height / 2;
-      camTargetting = true;
+      camTargeting = true;
     }
   }
 
-  // for (const s of platforms) {
-  //   if (overlapAABB(box, s)) {
-  //     // If moving right, snap to the left side of the platform.
-  //     if (this.vx > 0) box.x = s.x - box.w;
-  //     // If moving left, snap to the right side of the platform.
-  //     else if (this.vx < 0) box.x = s.x + s.w;
-
-  //     // Cancel horizontal velocity after collision.
-  //     this.vx = 0;
-  //   }
-  // }
-
   // Clamp target camera safely
-  if (!camTargetting) {
+  if (!camTargeting) {
     targetX = constrain(targetX, 0, maxCamX);
     targetY = constrain(targetY, 0, maxCamY);
   }
