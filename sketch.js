@@ -61,15 +61,24 @@ function draw() {
 
   for (p of level.pois) {
     if (p.d) {
-      if (dist(player.x, player.y, p.x, p.y) <= p.d / 2 + max(player.w, player.h) / 2) {
-        targetX = p.x - width / 2;
-        targetY = p.y - height / 2;
+      if (
+        dist(player.x, player.y, p.x, p.y) <=
+        p.d / 2 + max(player.w, player.h) / 2
+      ) {
+        targetX = p.poi?.x ?? p.x;
+        targetY = p.poi?.y ?? p.y;
+
+        targetX -= width / 2;
+        targetY -= height / 2;
         camTargetting = true;
       }
     }
     if (overlapAABB(player, p)) {
-      targetX = p.x + p.w / 2 - width / 2;
-      targetY = p.y + p.h / 2 - height / 2;
+      targetX = p.poi?.x ?? p.x + p.w / 2;
+      targetY = p.poi?.y ?? p.y + p.h / 2;
+
+      targetX -= width / 2;
+      targetY -= height / 2;
       camTargetting = true;
     }
   }
