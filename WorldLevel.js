@@ -50,5 +50,19 @@ class WorldLevel {
       12,
       40,
     );
+    // text(
+    //   "camTar: " +
+    //     this.camLerp +
+    //     "  Player: " +
+    //     (player.x | 0) +
+    //     "," +
+    //     (player.y | 0) +
+    //     "  Cam: " +
+    //     (camX | 0) +
+    //     "," +
+    //     (camY | 0),
+    //   12,
+    //   40,
+    // );
   }
 }

@@ -57,6 +57,21 @@ function draw() {
   let targetX = player.x - width / 2;
   let targetY = player.y - height / 2;
 
+  if (player.x) {
+  }
+
+  // for (const s of platforms) {
+  //   if (overlapAABB(box, s)) {
+  //     // If moving right, snap to the left side of the platform.
+  //     if (this.vx > 0) box.x = s.x - box.w;
+  //     // If moving left, snap to the right side of the platform.
+  //     else if (this.vx < 0) box.x = s.x + s.w;
+
+  //     // Cancel horizontal velocity after collision.
+  //     this.vx = 0;
+  //   }
+  // }
+
   // Clamp target camera safely
   // targetX = constrain(targetX, 0, maxCamX);
   // targetY = constrain(targetY, 0, maxCamY);

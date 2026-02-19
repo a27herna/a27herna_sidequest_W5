@@ -1,9 +1,5 @@
 ## Project Title
-Give your project a short, clear title (e.g., "Side Quest Week 1: Interactive Shape Switcher").
-
----
-## Group Number (only for group work)
-List your group number. 
+GBDA 302 - Side Quest Week 5: Camera controller + Points of interest
 
 ---
 ## Description
@@ -14,27 +10,13 @@ Example:
 > This project lets users switch between shapes using keyboard inputs.  
 > It explores how visual feedback can communicate accessibility states. 
 
+> This side quest showcases how the camera interacts/reacts to player movement.
+> It explores how visual feedback can be used to evoke emotion.
+
 ---
 ## Interaction Instructions
-Describe how to use or play your project.
-- How does the user start?
-- What controls or keys do they use?
-- Any important visual or audio feedback to watch for?
 
-Example:
-> Press `S` to switch shapes and `R` to reset the canvas.
-
----
-## Assets
-List any images, sounds, or other files used in your assets/ folder.
-Include in-text citations for all assets that are not your own, and connect them to your reference list.
-
-Example:
-> - `assets/sound/beep.mp3` (created in GarageBand)  
-> - `assets/image/background.png` (original artwork)
-
----
-## References
-Connect your in-text citations to the reference list along with additional sources that informed your design but were not directly cited. Provide all citations using the ACM reference format. 
+> Use `WASD` or the arrow keys to move around.
+> Look for objects within the game world and see how the camera reacts to their presence.
 
 ---

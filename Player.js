@@ -25,3 +25,19 @@ class Player {
     rect(this.x - 12, this.y - 12, 24, 24, 5);
   }
 }
+
+/*
+Collision function: AABB overlap test.
+- a is the moving player "box"
+- b is a platform rectangle
+
+We accept b as either:
+- a Platform instance (with x,y,w,h)
+- or a plain object with x,y,w,h
+This keeps it flexible. 
+*/
+function overlapAABB(a, b) {
+  return (
+    a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y
+  );
+}
