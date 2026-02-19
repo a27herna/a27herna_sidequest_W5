@@ -57,7 +57,17 @@ function draw() {
   let targetX = player.x - width / 2;
   let targetY = player.y - height / 2;
 
-  if (player.x) {
+  for (p of level.pois) {
+    if (p.d) {
+      if (dist(player.x, player.y, p.x, p.y) <= p.d + player.size) {
+        targetX = p.x;
+        targetY = p.y;
+      }
+    }
+    if (overlapAABB(player, p)) {
+      targetX = p.x;
+      targetY = p.y;
+    }
   }
 
   // for (const s of platforms) {

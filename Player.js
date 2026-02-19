@@ -2,6 +2,7 @@ class Player {
   constructor(x, y, speed) {
     this.x = x;
     this.y = y;
+    this.size = 24;
     this.s = speed ?? 3;
   }
 
@@ -22,7 +23,7 @@ class Player {
   draw() {
     fill(50, 110, 255);
     noStroke();
-    rect(this.x - 12, this.y - 12, 24, 24, 5);
+    rect(this.x - 12, this.y - 12, this.size, this.size, 5);
   }
 }
 

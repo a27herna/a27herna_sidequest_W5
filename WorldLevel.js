@@ -30,6 +30,14 @@ class WorldLevel {
     noStroke();
     fill(170, 190, 210);
     for (const o of this.obstacles) rect(o.x, o.y, o.w, o.h, o.r ?? 0);
+
+    stroke(100, 220, 255);
+    noFill();
+    for (const p of this.pois) {
+      if (p.d) {
+        circle(p.x, p.y, p.d);
+      } else rect(p.x, p.y, p.w, p.h, p.r ?? 0);
+    }
   }
 
   drawHUD(player, camX, camY) {
