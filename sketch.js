@@ -57,16 +57,20 @@ function draw() {
   let targetX = player.x - width / 2;
   let targetY = player.y - height / 2;
 
+  let camTargetting = false;
+
   for (p of level.pois) {
     if (p.d) {
-      if (dist(player.x, player.y, p.x, p.y) <= p.d + player.size) {
-        targetX = p.x;
-        targetY = p.y;
+      if (dist(player.x, player.y, p.x, p.y) <= p.d / 2 + player.size / 2) {
+        targetX = p.x - width / 2;
+        targetY = p.y - height / 2;
+        camTargetting = true;
       }
     }
     if (overlapAABB(player, p)) {
-      targetX = p.x;
-      targetY = p.y;
+      targetX = p.x - width / 2;
+      targetY = p.y - height / 2;
+      camTargetting = true;
     }
   }
 
@@ -83,8 +87,10 @@ function draw() {
   // }
 
   // Clamp target camera safely
-  // targetX = constrain(targetX, 0, maxCamX);
-  // targetY = constrain(targetY, 0, maxCamY);
+  if (!camTargetting) {
+    targetX = constrain(targetX, 0, maxCamX);
+    targetY = constrain(targetY, 0, maxCamY);
+  }
 
   // Smooth follow using the JSON knob
   const camLerp = level.camLerp; // ← data-driven now
