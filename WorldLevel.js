@@ -8,6 +8,7 @@ class WorldLevel {
     this.gridStep = json.world?.gridStep ?? 160;
 
     this.obstacles = json.obstacles ?? [];
+    this.pois = json.pois ?? [];
 
     // NEW: camera tuning knob from JSON (data-driven)
     this.camLerp = json.camera?.lerp ?? 0.12;

@@ -50,15 +50,16 @@ function draw() {
   player.x = constrain(player.x, 0, level.w);
   player.y = constrain(player.y, 0, level.h);
 
+  const maxCamX = max(0, level.w - width);
+  const maxCamY = max(0, level.h - height);
+
   // Target camera (center on player)
   let targetX = player.x - width / 2;
   let targetY = player.y - height / 2;
 
   // Clamp target camera safely
-  const maxCamX = max(0, level.w - width);
-  const maxCamY = max(0, level.h - height);
-  targetX = constrain(targetX, 0, maxCamX);
-  targetY = constrain(targetY, 0, maxCamY);
+  // targetX = constrain(targetX, 0, maxCamX);
+  // targetY = constrain(targetY, 0, maxCamY);
 
   // Smooth follow using the JSON knob
   const camLerp = level.camLerp; // ← data-driven now
