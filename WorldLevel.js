@@ -31,7 +31,7 @@ class WorldLevel {
     fill(170, 190, 210);
     for (const o of this.obstacles) rect(o.x, o.y, o.w, o.h, o.r ?? 0);
 
-    stroke(100, 220, 255);
+    stroke(133, 199, 147);
     noFill();
     for (const p of this.pois) {
       if (p.d) {
