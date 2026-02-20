@@ -40,37 +40,39 @@ class WorldLevel {
     }
   }
 
-  drawHUD(player, camX, camY) {
+  drawHUD(player, camX, camY, camTarBool, camTarX, camTarY) {
     noStroke();
     fill(20);
-    text("Example 4 — JSON world + smooth camera (lerp).", 12, 20);
-    text(
-      "camLerp(JSON): " +
-        this.camLerp +
-        "  Player: " +
-        (player.x | 0) +
-        "," +
-        (player.y | 0) +
-        "  Cam: " +
-        (camX | 0) +
-        "," +
-        (camY | 0),
-      12,
-      40,
-    );
-    // text(
-    //   "camTar: " +
-    //     this.camLerp +
-    //     "  Player: " +
-    //     (player.x | 0) +
-    //     "," +
-    //     (player.y | 0) +
-    //     "  Cam: " +
-    //     (camX | 0) +
-    //     "," +
-    //     (camY | 0),
-    //   12,
-    //   40,
-    // );
+    text("Wander about and wonder about what is in store for you.", 12, 20);
+
+    if (!camTarBool) {
+      text(
+        "Player: (" +
+          (player.x | 0) +
+          "," +
+          (player.y | 0) +
+          ")  Looking At: Player (" +
+          ((camX + width / 2) | 0) +
+          "," +
+          ((camY + height / 2) | 0) +
+          ")",
+        12,
+        60,
+      );
+    } else {
+      text(
+        "Player: (" +
+          (player.x | 0) +
+          "," +
+          (player.y | 0) +
+          ")  Looking At: POI (" +
+          (camTarX + width / 2) +
+          "," +
+          (camTarY + height / 2) +
+          ")",
+        12,
+        60,
+      );
+    }
   }
 }

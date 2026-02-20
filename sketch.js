@@ -102,7 +102,7 @@ function draw() {
   player.draw();
   pop();
 
-  level.drawHUD(player, camX, camY);
+  level.drawHUD(player, camX, camY, camTargeting, targetX, targetY);
 }
 
 function keyPressed() {
